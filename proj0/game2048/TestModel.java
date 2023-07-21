@@ -178,6 +178,7 @@ public class TestModel extends TestUtils {
         checkModel(after, 4, 0, prevBoard, Side.WEST);
     }
 
+
     @Test
     /** Checks that a tilt that causes no change returns false. */
     public void testNoMove() {
