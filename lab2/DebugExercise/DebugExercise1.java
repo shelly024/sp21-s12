@@ -9,8 +9,8 @@ public class DebugExercise1 {
         if (bottom == 0) {
             throw new IllegalArgumentException("Division by zero is not allowed");
         }
-        float quotient = (float) top / bottom;
-        int result=Math.round(quotient);
+        double quotient = (double) top / bottom;
+        int result=(int)Math.round(quotient);
         return result;
     }
 
@@ -24,11 +24,6 @@ public class DebugExercise1 {
         int b2 = 100;
         int result2 = divideThenRound(t2, b2);
         System.out.println("round(" + t2 + "/" + b2 + ")=" + result2);
-
-        int t4 = 9;
-        int b4 = 0;
-        int result4 = divideThenRound(t4, b4);
-        System.out.println("round(" + t4 + "/" + b4 + ")=" + result4);
 
         int t3 = 3;
         int b3 = 4;
