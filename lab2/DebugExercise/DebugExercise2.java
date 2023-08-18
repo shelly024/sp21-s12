@@ -40,9 +40,9 @@ public class DebugExercise2 {
      * and b = {0, 20, 5}, this function will return {1, 20, 5}.
      * */
     public static int[] arrayMax(int[] a, int[] b) {
-        if (a == null){return b;}
-        if (a == null){return a;}
-        if (a == null && b == null){return null;}
+if (a.length==0 && b.length==0){return null;}else
+            if(a.length==0){return b;}else
+                if(b.length==0){return a;}
         
         if (a.length != b.length) {
             System.out.println("ERROR! Arrays don't match");
@@ -62,6 +62,9 @@ public class DebugExercise2 {
 
     /** Returns the sum of all elements in x. */
     public static int arraySum(int[] x) {
+        if (x == null || x.length == 0) {
+            throw new IllegalArgumentException("Input array must not be empty or null");
+        }
         int i = 0;
         int sum = 0;
         while (i < x.length) {
