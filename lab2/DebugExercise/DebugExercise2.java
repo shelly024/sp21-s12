@@ -1,5 +1,7 @@
 package DebugExercise;
 
+import java.util.Arrays;
+
 /**
  * Exercise to showcase the step over button.
  * Code adapted from https://stackoverflow.com/questions/4895173/bitwise-multiply-and-add-in-java and https://stackoverflow.com/questions/1533131/what-useful-bitwise-operator-code-tricks-should-a-developer-know-about
@@ -39,16 +41,23 @@ public class DebugExercise2 {
      * a[i] and b[i]. For example, if a = {1, -10, 3}
      * and b = {0, 20, 5}, this function will return {1, 20, 5}.
      * */
-    public static int[] arrayMax(int[] a, int[] b) {
-if (a.length==0 && b.length==0){return null;}else
-            if(a.length==0){return b;}else
-                if(b.length==0){return a;}
-        
+    public static int[] arrayMax(int[] a,int[] b){
+        if (a.length==0 && b.length==0){return new int[0];}
+        else if(a.length==0){
+                return b;
+        }
+        else if(b.length==0){
+                return a;
+        }
+
         if (a.length != b.length) {
             System.out.println("ERROR! Arrays don't match");
             return null;
         }
+
+
         int[] returnArray = new int[a.length];
+
         for (int i = 0; i < a.length; i += 1) {
             int biggerValue = a[i];
             if (a[i]<b[i]){
@@ -56,7 +65,6 @@ if (a.length==0 && b.length==0){return null;}else
             }
             returnArray[i] = biggerValue;
         }
-
         return returnArray;
     }
 
@@ -83,12 +91,14 @@ if (a.length==0 && b.length==0){return null;}else
         int sumofMaxes = arraySum(maxes);
         return sumofMaxes;
     }
-
-
     public static void main(String[] args) {
+        int[] c={};
+        int[] d={3, -3, 2, -1};
+        int sumOfElementwiseMaxes1 = sumOfElementwiseMaxes(c, d);
+        System.out.println(sumOfElementwiseMaxes1);
+
         int[] a = {1, 11, -1, -11};
         int[] b = {3, -3, 2, -1};
-
         int sumOfElementwiseMaxes = sumOfElementwiseMaxes(a, b);
         System.out.println(sumOfElementwiseMaxes);
     }
